@@ -1,60 +1,60 @@
 <?php
 class Math
 {
+    const ADD = 'ADD';
+    const SUBTRACT = 'SUBTRACT';
+    const DIVIDE = 'DIVIDE';
+    const MULTIPLY = 'MULTIPLY';
     
     function __construct()
     {
+        
     }
     function add($x, $y){
-        $numargs = func_num_args();
-        if($numargs > 2) {
-            $result = $x + $y;
-            for($i = 2; $i <= $numargs -1; $i++){
-                $result += func_get_arg($i);
-            }
-            return $result;
-        } else {
-            return $x + $y;
-        }
+        return $this->doOperation($this::ADD,func_get_args());
     }
     
     function subtract($x, $y) {
-        $numargs = func_num_args();
-        if($numargs > 2) {
-            $result = $x - $y;
-            for($i = 2; $i <= $numargs - 1; $i++){
-                $result -= func_get_arg($i);
-            }
-            return $result;
-        } else {
-            return $x - $y;
-        }
+        return $this->doOperation($this::SUBTRACT,func_get_args());
     }
     
     function multiply($x, $y) {
-        $numargs = func_num_args();
-        if($numargs > 2) {
-            $result = $x * $y;
-            for($i = 2; $i <= $numargs - 1; $i++){
-                $result *= func_get_arg($i);
-            }
-            return $result;
-        } else {
-            return $x * $y;
-        }
+        return $this->doOperation($this::MULTIPLY,func_get_args());
     }
     function divide($x, $y) {
-        $numargs = func_num_args();
-        if($numargs > 2) {
-            $result = $x / $y;
-            for($i = 2; $i <= $numargs - 1; $i++){
-                $result /= func_get_arg($i);
+        return $this->doOperation($this::DIVIDE,func_get_args());
+    }
+    private function doOperation($operation, $args) {
+        if($operation == $this::ADD) {
+            $result = $args[0];
+            for($i = 1; $i < count($args); $i++){
+                $result += $args[$i];
             }
             return $result;
-        } else {
-            return $x / $y;
+        }
+        if($operation == $this::SUBTRACT) {
+            $result = $args[0];
+            for($i = 1; $i < count($args); $i++){
+                $result -= $args[$i];
+            }
+            return $result;
+        }
+        if($operation == $this::DIVIDE) {
+            $result = $args[0];
+            for($i = 1; $i < count($args); $i++){
+                $result /= $args[$i];
+            }
+            return $result;
+        }
+        if($operation == $this::MULTIPLY) {
+            $result = $args[0];
+            for($i = 1; $i < count($args); $i++){
+                $result *= $args[$i];
+            }
+            return $result;
         }
     }
 }
+
 
 ?>
