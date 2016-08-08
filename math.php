@@ -5,11 +5,7 @@ class Math
     const SUBTRACT = 'SUBTRACT';
     const DIVIDE = 'DIVIDE';
     const MULTIPLY = 'MULTIPLY';
-    
-    function __construct()
-    {
-        
-    }
+
     function add($x, $y){
         return $this->doOperation($this::ADD,func_get_args());
     }
