@@ -10,6 +10,5 @@
 
     $result = $array["TWO"] * $array["THREE"];
 
-    echo sprintf("THE RESULTS OF %d * %d is: %d \n", $array["TWO"], $array["THREE"], $result);
-
+    echo "THE RESULTS OF " . $array["TWO"] ." * " . $array["THREE"] . " is: " . $result . "\n";
 ?>
