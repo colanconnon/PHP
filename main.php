@@ -8,6 +8,7 @@
         "FIVE" => FIVE
     ];
 
+    $result = $array["TWO"] * $array["THREE"];
 
 
 ?>
