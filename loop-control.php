@@ -1,8 +1,8 @@
 <?php 
 
     $number = array_filter(range(0, 100), function($item) { return ($item % 3) == 0; });
-
-    for($i = 0; $i < count($number); $i++) {
+    $i = 0;
+    while($i < count($number)) {
         //get all the array keys so i can access array by index
         $keys = array_keys($number);
         $num = $number[$keys[$i]];
@@ -20,5 +20,6 @@
         if($num == end($number)){
             echo "Last number \n";
         }
+        $i++;
     }
 ?>
