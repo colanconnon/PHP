@@ -10,5 +10,8 @@ class Workstation  extends Computer
     {
     }
 
+    public function proccessLongRequest($data, $callback){
+        
+    }
 }
 ?>

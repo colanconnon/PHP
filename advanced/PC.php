@@ -6,10 +6,11 @@ class PC extends Workstation {
     }
     
     function sayPc(){
-        print("This is from pc \n");
+        $pcType = "Windows 10";
+        return function(){
+            print("This is from pc \n");
+        };
     }
 }
 
-$pc = new PC();
-$pc->sayPc();
 ?>

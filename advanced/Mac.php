@@ -1,25 +1,27 @@
 <?php
-    require_once('./Workstation.php');
+require_once('./Workstation.php');
 
 
-    class Mac extends Workstation
+class Mac extends Workstation
+{
+    //public variable you can access directly...
+    public $type = "macbook pro";
+    function __construct()
     {
         
-        function __construct($name)
-        {
-            $this->name = $name;
-        }
-
-        function sayIAmAMac(){
-            print("I am a mac \n");
-        }
-        public function printComputerName() {
-            parent::printComputerName();
-        }
     }
     
-$mac = new Mac("MAc");
-$mac->sayIAmAMac();
-$mac->printComputerName();
+    function sayIAmAMac(){
+        print("I am a mac \n");
+    }
+    public function sayName() {
+        
+        //name is inhertied from a protected property
+        print($this->name . "\n");
+    }
+}
+
+
+
 
 ?>

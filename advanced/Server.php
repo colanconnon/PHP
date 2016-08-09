@@ -1,18 +1,23 @@
 <?php
 
-/**
-*
-*/
-require_once('./Computer.php');
-class Server extends Computer
-{
-    function __construct() {
+namespace ServerNamespace {
+    require_once('./Computer.php');
+    use Computer;
+    class Server extends Computer
+    {
+        function __construct() {
+            
+        }
         
-    }
-
-    function sayServer() {
-        print("This is from server");
+        function sayServerType() {
+            print("This is from server \n");
+        }
+        
+        function ProcessFile() {
+            print("Server is Processing file \n");
+        }
     }
 }
+
 
 ?>
